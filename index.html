@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Guard AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="leaves-container"></div>
+
+    <main class="app-container">
+        <section class="input-column">
+            <header>
+                <div class="theme-switcher">
+                    <span>Dark</span>
+                    <label class="switch"><input type="checkbox" id="theme-toggle"><span class="slider"></span></label>
+                    <span>Light</span>
+                </div>
+                <h1>Crop Guard AI 🌿</h1>
+                <p>Upload an image to identify plant diseases instantly.</p>
+            </header>
+
+            <label for="image-upload" class="upload-label" id="drop-area">
+                <div class="upload-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+                </div>
+                <span>Drag & Drop or Click to Upload</span>
+            </label>
+            <input type="file" id="image-upload" accept="image/*">
+            
+            <div class="button-container">
+                <button id="camera-button" class="button">Use Camera</button>
+                <button id="predict-button" class="button primary">Predict</button>
+                <button id="clear-button" class="button">Clear</button>
+            </div>
+        </section>
+
+        <section class="output-column">
+            <div id="output-placeholder">
+                <img src="https://storage.googleapis.com/gemini-generative-ai-public/images/93635921_1714486558.png" alt="Plant analysis icon" class="placeholder-icon">
+                <p>Your image preview and prediction will appear here.</p>
+            </div>
+            <img id="image-preview" class="hidden" src="#" alt="Image Preview"/>
+            <div class="spinner" id="loading-spinner"></div>
+            <div id="result-container"></div>
+            <div class="chart-container hidden" id="chart-wrapper">
+                <canvas id="prediction-chart"></canvas>
+            </div>
+            <div id="file-name"></div>
+        </section>
+    </main>
+
+    <div id="camera-view" class="hidden">
+        <video id="video-feed" playsinline></video>
+        <button id="capture-button" class="button">Take Photo</button>
+        <button id="close-camera-button" class="button">Close</button>
+    </div>
+
+    <div class="history-container">
+        <h2>Prediction History</h2>
+        <ol id="history-list"></ol>
+    </div>
+
+    <div id="info-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-button" class="close-button">&times;</button>
+            <h2 id="modal-title">Disease Information</h2>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

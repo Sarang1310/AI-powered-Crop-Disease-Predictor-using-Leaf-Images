@@ -1,0 +1,37 @@
+{
+    "Potato___Early_blight": {
+        "description": "Early blight is a common fungal disease that affects potatoes and tomatoes. It is caused by the fungus Alternaria solani.",
+        "symptoms": [
+            "Small, dark, circular spots on lower leaves.",
+            "Spots enlarge, forming a 'bull's-eye' pattern.",
+            "Leaves may turn yellow and drop off."
+        ],
+        "actions": [
+            "Ensure good air circulation around plants.",
+            "Apply fungicides as a preventive measure.",
+            "Remove and destroy infected plant debris after harvest."
+        ]
+    },
+    "Tomato_Bacterial_spot": {
+        "description": "Bacterial spot is a disease caused by several species of Xanthomonas bacteria, affecting tomatoes and peppers.",
+        "symptoms": [
+            "Small, water-soaked spots on leaves that later turn greasy and black.",
+            "Slightly raised, scabby spots on fruit.",
+            "Severe infections can cause leaves to yellow and fall."
+        ],
+        "actions": [
+            "Use disease-free seeds and plants.",
+            "Avoid overhead watering; water at the base of the plant.",
+            "Apply copper-based bactericides."
+        ]
+    },
+    "Tomato_healthy": {
+        "description": "The plant appears to be in good health.",
+        "symptoms": [
+            "No visible signs of disease or stress."
+        ],
+        "actions": [
+            "Continue standard care, including proper watering, sunlight, and nutrient management."
+        ]
+    }
+}
